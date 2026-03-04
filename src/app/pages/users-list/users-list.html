@@ -1,0 +1,25 @@
+<h2>Lista de Usuários</h2>
+
+<div *ngIf="carregando">Carregando...</div>
+<div *ngIf="erro" style="color: red;">{{ erro }}</div>
+
+<table *ngIf="!carregando && !erro" border="1" style="width: 100%; text-align: left;">
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Email</th>
+      <th>Cidade</th>
+      <th>Ação</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of usuarios">
+      <td>{{ user.name }}</td>
+      <td>{{ user.email }}</td>
+      <td>{{ user.address.city }}</td>
+      <td>
+        <a [routerLink]="['/users', user.id]">Ver detalhes</a>
+      </td>
+    </tr>
+  </tbody>
+</table>
