@@ -1,16 +1,13 @@
-<div style="padding: 20px;">
-  <a routerLink="/users">⬅ Voltar para a lista</a>
+<div *ngIf="!carregando && user">
+  <h2>Detalhes de: {{ user?.name }}</h2>
+  <p><strong>Email:</strong> {{ user?.email }}</p>
+  <p><strong>Telefone:</strong> {{ user?.phone }}</p>
+  <p><strong>Cidade:</strong> {{ user?.address?.city }}</p>
+ <!--
+  <p><strong>Empresa:</strong> {{ user?.company?.name }}</p>
+ --> 
+</div>
 
-  <h2 *ngIf="carregando">Carregando detalhes...</h2>
-  <h2 *ngIf="erro" style="color: red;">{{ erro }}</h2>
-
-  <div *ngIf="user && !carregando">
-    <h1>Detalhes do Usuário</h1>
-    <p><strong>Nome:</strong> {{ user.name }}</p>
-    <p><strong>Email:</strong> {{ user.email }}</p>
-    <p><strong>Telefone:</strong> {{ user.phone }}</p>
-    <p><strong>Website:</strong> {{ user.website }}</p>
-    <p><strong>Cidade:</strong> {{ user.address.city }}</p>
-    <p><strong>Empresa:</strong> {{ user.company.name }}</p>
-  </div>
+<div *ngIf="carregando">
+  <p>Carregando detalhes...</p>
 </div>

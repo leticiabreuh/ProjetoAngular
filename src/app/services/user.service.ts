@@ -8,7 +8,7 @@ import { User } from '../models/user';
 })
 export class UserService {
   // URL da API pública definida no objetivo do projeto
-  private apiUrl = 'https://jsonplaceholder.typicode.com/users'; //[cite: 5]
+  private apiUrl = 'https://jsonplaceholder.typicode.com/users'; 
 
   constructor(private http: HttpClient) { }
 

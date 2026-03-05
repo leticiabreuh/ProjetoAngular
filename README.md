@@ -6,7 +6,7 @@ Respostas para o Relatório
 É um recurso do Angular usado para ler os parâmetros de uma rota ativa. Você o utilizou no UserDetailComponent para "pegar" o ID da URL (ex: o número "3" em /users/3) e descobrir qual usuário deve ser exibido na tela.
 
 3. Onde você usou Observable e por quê?
-Você usou Observables no user.service.ts (ao fazer o http.get) e nos componentes (ao usar o .subscribe).
+ Observables no user.service.ts (ao fazer o http.get) e nos componentes (ao usar o .subscribe).
 
 Por quê: Eles são usados para lidar com requisições assíncronas. Como a API leva tempo para responder, o Observable "observa" a chegada dos dados e avisa o sistema para atualizar a tela assim que eles estiverem prontos.
 
